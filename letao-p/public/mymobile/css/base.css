@@ -5,7 +5,6 @@
 body {
     width: 100%;
     height: 100%;
-    background-color: #fff;
 }
 ul {
     list-style: none;
@@ -13,3 +12,13 @@ ul {
 a {
     text-decoration: none;
 }
+.mui-bar {
+    background-color: #3e92f7;
+}
+.mui-bar span {
+    color: #fff;
+}
+
+
+
+
