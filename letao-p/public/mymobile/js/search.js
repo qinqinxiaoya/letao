@@ -2,31 +2,30 @@
  * Created by meiqing on 2018/9/14.
  */
 $(function () {
-    //ÊµÏÖÓÃ»§µã»÷ËÑË÷°´Å¥ Ìø×ªµ½½á¹ûÒ³
-        //1¸øËÑË÷°´Å¥Ìí¼Óµã»÷ÊÂ¼þ
-        //2»ñÈ¡ÓÃ»§ÊäÈëµÄËÑË÷¹Ø¼ü×Ö
-        //3ÅÐ¶ÏÓÃ»§ÊÇ·ñÊäÈëÁËËÑË÷¹Ø¼ü×Ö
-        //4Èç¹ûÓÃ»§Ã»ÓÐÊäÈë ×èÖ¹Ìø×ª²¢¸ø³öÌáÊ¾
-        //5Èç¹ûÓÃ»§ÊäÈëÁË Ìø×ªµ½ËÑË÷½á¹ûÒ³Ãæ£¬²¢½«ÓÃ»§ÊäÈë¹Ø¼ü×Ö´øµ½Õâ¸öÒ³Ãæ
+    //
+        //1ç»™æœç´¢æŒ‰é’®æ·»åŠ ç‚¹å‡»äº‹ä»¶
+        //2 èŽ·å–ç”¨æˆ·è¾“å…¥å…³é”®å­—
+        //3 åˆ¤æ–­ç”¨æˆ·æ˜¯å¦è¾“å…¥å…³é”®å­—
+        //4 å¦‚æžœç”¨æˆ·æ²¡æœ‰è¾“å…¥ é˜»æ­¢è·³è½¬
+        //5 å¦‚æžœç”¨æˆ·è¾“å…¥äº† å°±è·³è½¬åˆ°æœç´¢ç»“æžœé¡µé¢ å¹¶å°†å…³é”®å­—å¸¦åˆ°æœç´¢ç»“æžœé¡µé¢
     $('.btn').on('click',function(){
-        //»ñÈ¡ÓÃ»§ÊäÈëµÄËÑË÷¹Ø¼ü×Ö
         var keyword = $(this).siblings('input').val();
         if(keyword){
-            keyArr.push(keyword);//½«ÓÃ»§ÊäÈë¹Ø¼ü×Ö´æÔÚÊý×éÖÐ
+            keyArr.push(keyword);//ç”¨æˆ·è¾“å…¥å…³é”®å­—è¿½åŠ åˆ°æ•°ç»„ä¸­
             localStorage.setItem("keyArr",JSON.stringify(keyArr));
-
+            //å°†æ•°ç»„å­˜å‚¨åœ¨æœ¬åœ°
             location.href="search-result.html?keyword="+keyword;
         }else{
-            alert("ÇëÊäÈë¹Ø¼ü×Ö");
+            alert("è¯·è¾“å…¥å•†å“å…³é”®å­—");
         }
     })
 
-    //ÊµÏÖÀúÊ·¹Ø¼ü×Ö´æ´¢
-        //1 ×¼±¸Ò»¸öÊý×é ´æ´¢¹Ø¼ü×Ö
-        //2 µ±ÓÃ»§µã»÷ËÑË÷°´Å¥µÄÊ±ºò½²ÓÃ»§ÊäÈëµÄ¹Ø¼ü×Ö×·¼Óµ½Êý×éÖÐ
-        //3 ½«Êý×é´æ´¢ÔÚ±¾µØ´æ´¢ÖÐ
-        //4 ÔÚÒ³ÃæÒ»ÉÏÀ´µÄÊ±ºò ÅÐ¶Ï±¾µØ´æ´¢ÖÐÊÇ·ñÓÐÒÑ¾­´æ´¢µÄ¹Ø¼ü×Ö
-        //5 ½«Êý¾ÝºÍhtmlÆ´½Ó
+    //å®žçŽ°åŽ†å²å…³é”®å­—å­˜å‚¨
+        //1 å‡†å¤‡ä¸€ä¸ªå­˜å‚¨å…³é”®å­—çš„æ•°ç»„
+        //2 å½“ç”¨æˆ·ç‚¹å‡»æœç´¢æŒ‰é’®çš„æ—¶å€™å°†ç”¨æˆ·è¾“å…¥çš„å…³é”®å­—è¿½åŠ åˆ°æ•°ç»„ä¸­
+        //3 å°†æ•°ç»„å­˜å‚¨åˆ°æœ¬åœ°å­˜å‚¨ä¸­
+        //4 åœ¨é¡µé¢ä¸€ä¸Šæ¥æ—¶åˆ¤æ–­æœ¬åœ°å­˜å‚¨ä¸­æ˜¯å¦æœ‰å­˜å‚¨çš„å…³é”®å­—
+        //5 ï¿½ï¿½ï¿½ï¿½ï¿½Ýºï¿½htmlÆ´ï¿½ï¿½
     var keyArr =  [];
     if(localStorage.getItem("keyArr")){
         keyArr = JSON.parse(localStorage.getItem("keyArr"));
@@ -35,9 +34,9 @@ $(function () {
         console.log(html);
         $('.mui-table-view').html(html);
     }
-    //ÊµÏÖÇå¿ÕÀúÊ·
-        //1 ¸øÔªËØÌí¼Óµã»÷ÊÂ¼þ
-        //2 Çå¿ÕÒ³ÃæÖÐµÄÊý¾Ý Çå¿Õ±¾µØ´æ´¢
+    //æ¸…ç©ºåŽ†å²æœç´¢è®°å½•
+        //1 ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Â¼ï¿½
+        //2 ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Õ±ï¿½ï¿½Ø´æ´¢
     $('.clearBtn').on('click', function () {
         $('.history-box').html('');
         localStorage.removeItem("keyArr");

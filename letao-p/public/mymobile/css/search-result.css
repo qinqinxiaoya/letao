@@ -44,9 +44,12 @@
   width: 100%;
   display: block;
 }
-.mui-content .product ul li a span {
+.mui-content .product ul li a > span {
   font-size: 14px;
   color: #8f8f94;
+  height: 60px;
+  display: block;
+  overflow: hidden;
 }
 .mui-content .product ul li a p > span {
   color: red;
@@ -59,4 +62,13 @@
   background: #2196f3;
   color: #fff;
   margin-bottom: 10px;
+}
+#refreshContainer {
+  position: absolute;
+  top: 45px;
+  bottom: 50px;
+  width: 100%;
+}
+.mui-bar-nav ~ .mui-content {
+  padding-top: 0;
 }

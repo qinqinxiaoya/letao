@@ -40,9 +40,12 @@
             width: 100%;
             display: block;
           }
-          span {
+          >span {
             font-size: 14px;
             color: #8f8f94;
+            height: 60px;
+            display: block;
+            overflow: hidden;
           }
           p {
             >span {
@@ -62,4 +65,13 @@
       }
     }
   }
+}
+#refreshContainer {
+  position: absolute;
+  top: 45px;
+  bottom: 50px;
+  width: 100%;
+}
+.mui-bar-nav~.mui-content {
+  padding-top:0;
 }
